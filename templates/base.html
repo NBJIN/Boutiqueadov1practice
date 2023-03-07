@@ -34,45 +34,158 @@
     <title>Spice Up Your Life</title>
 </head>
 
+<!-- Navigation -->
 <body class="d-flex flex-column h-100 main-bg">
+    <!--first / top container with drawk brown color -->
+    <div class="container-fluid container-fluid-1">
+      <!-- top section with dark brown color  -->
+    </div>
 
-    <!-- Navigation -->
-    
-    
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="#">Logo Here</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Spices</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              My Account
+    <!--Second container with light cream color which holds logo and nav bar. -->
+    <div class="container-fluid container-fluid-2">
+
+      <nav class="navbar navbar-expand">
+          <!-- <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-right"> -->
+            <a href="{% url 'home' %}" class="nav-link main-logo-link">
+                <h2 class="logo-font-1 text-black my-0"><strong>SPICE </strong></h2>
+                <h4 class="logo-font-2 text-black my-0 border-bottom border-4 d-inline-block" style="border-color: #e79e39"><strong>UP YOUR LIFE </strong></h4>
             </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Sign Up</a>
-              <a class="dropdown-item" href="#">Sign In</a>
-              <div class="dropdown-divider"></div>
+
+            <ul class="navbar-nav ml-auto">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button> 
+             <div class="collapse navbar-collapse" id="navbarSupportedContent"> 
+            </ul>
+            <ul class="navbar-nav mr-auto">
+
+                <li class="nav-item active">
+                  <a class="nav-link" href="#">Home</a>
+                </li>
+
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Spices</a>
+                </li>
+
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    My Account
+                  </a>
+                <div class="dropdown-menu border-0" aria-labelledby="my-account-link">
+                <a href="#" class="dropdown-item-1">Sign Up</a>
+                <a href="#" class="dropdown-item-2">Sign In</a>
+                <!-- <div class="dropdown-divider"></div> -->
+                </div>
+                </li>
+
+            </ul>
+        
+      </nav>
+    </div>
+
+
+
+
+      <!-- <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
+        <a href="" class="dropdown-item">By Price</a>
+        <a href="" class="dropdown-item">By Rating</a>
+        <a href="" class="dropdown-item">By Category</a>
+        <a href="" class="dropdown-item">All Products</a>
+    </div>
+   -->
+ <!--Third container with background image. -->
+      <div class="container container-fluid-3 bg-image position-relative">
+        <!-- <class="img-fluid" alt=""></class> -->
+        <img src="/media/background_image_long.jpg" class="img-fluid" alt="image-of-spices">
+        <!-- <div class="row justify-content-center align-items-center">
+          <div class="col-lg-6">
+            <div class="card">
+        -->
+        <div class="card mb-3 ow justify-content-center align-items-center" style="max-width: 540px;">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <h1 class="card-title">Discover the World of Spices</h1>
+           
+            <div class="col-md-8">
+              <div class="card-body">
+                
+                <p class="card-text">Add life to your everyday cooking! .</p>
+                <p class="card-text">Get started today.</p>
+                <button type="button" class="btn btn-dark">Sign Up</button>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+              </div>
             </div>
-          </li>
-        </ul>
-        <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
+          </div>
+          </div>
+        </div>
+
+        <div class="card mb-3" style="max-width: 540px;">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <img src="..." class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+
+
+        
+        </div>
+
+   
+       
+       
+        
+
+      
+      <!-- <div class="container container-fluid-3">
+        <div class="row">
+          <div class="col"></div>
+        </div>
+        Logo 
       </div>
-    </nav>
+      <div class="container">
+        Home
+      </div>
+      <div class="container">
+        Spices
+      </div>
+      <div class="container">
+        My Account
+      </div>
+    </div>
+    <
+      xxxx
+    </div>
+    <div class="container-fluid container-fluid-3">
+      xxxx
+    </div> -->
+    <div class="container-fluid container-fluid-4">
+      <!-- <h2>Feel Free <i class="fa-brands fa-fly"></i></h2> -->
 
+      <h2 class="justify-center"><i class="fas fa-regular fa-mortar-pestle"></i> So much flavour you can add to your recipes!</i></h2>
+      <br>
+      <br>
+      <p class="justify-center">
+        Spices and herbs should be used to enhance the natural flavor of food - not disguise
+        or obscure it. Many herbs and spices can complement a dish and each other;
+        however, be selective in their combinations. Avoid using too many at one time.
+        Herbs and spices have thousands of years of history of being used for medicinal
+        purposes. Not only do they add a delicious flavor to your meal, but they also offer a
+        variety of different medicinal properties. 
+      </p>
 
-
-    
+    </div>
+       
 
     <div class="container">
         {% block content %}
@@ -80,14 +193,19 @@
         {% endblock content %}
     </div>
 
-    <!-- Footer -->
+    <!--Container 5  with Footer Details -->
+    <div class="container-fluid container-fluid-5">
     <footer class="footer mt-auto py-3 dark-bg">
-        <p class="m-0 text-center text-white">Group Project - The Spice Ladies</p>
-        <p class="m-0 text-center text-white">Follow us: <i class="fab fa-facebook-square ms-3"></i>
-            <i class="fab fa-twitter-square ms-3"></i>
-            <i class="fab fa-instagram-square ms-3"></i>
-            <i class="fab fa-youtube-square ms-3"></i></p>
+        <p class="m-0 text-center style-1">CI Group Project - The Spice Ladies</p>
+        <p class="m-0 text-center style-2">Follow us:  
+          <a href="http://facebook.com" target="_blank" rel="noopener" aria-label="Visit our Facebook page (opens in new tab)"><i class="fab fa-facebook-square ms-3"></i></a>
+          <a href="http://twitter.com" target="_blank" rel="noopener" aria-label="Visit our Twitter page (opens in new tab)"><i class="fab fa-twitter-square ms-3 style-3"></i></a>
+          <a href="http://instagram.com" target="_blank" rel="noopener" aria-label="Visit our instagram page (opens in new tab)"><i class="fab fa-instagram-square ms-3 style-4"></i></a>
+          <a href="http://youtube.com" target="_blank" rel="noopener" aria-label="Visit our Youtube page (opens in new tab)"><i class="fab fa-youtube-square ms-3 style-5"></i></p>
     </footer>
+  </div>
 </body>
 
 </html>
+
+
