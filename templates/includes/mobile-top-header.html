@@ -1,4 +1,10 @@
+<!--Three list items the firt one a button to open the search bar -->
 <li class="list-inline-item">
+    <!--  These list items might look familiar. They're actually almost identical to the
+    ones that exist in the header in base.html except for a few key things.
+    First you'll notice that the links in them each use the d-block and the d-lg none classes
+    from bootstrap.
+    This way they'll be hidden on large screens where instead they'll show up in the top portion of the header.-->
     <a class="text-black nav-link d-block d-lg-none" href="#" id="mobile-search" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <div class="text-center">
             <div><i class="fas fa-search fa-lg"></i></div>
@@ -6,6 +12,10 @@
         </div>
     </a>
     <!--Search box at top of screen -->
+    <!--You'll also see that the search form is now in a drop-down menu
+    and there's nothing special about that just instead of creating a list of links
+    like we did for the My Account drop-down. We put a form in it instead.All of this makes sure that the top portion of the navbar which is separate from the main navigation
+will display cleanly on mobile. -->
 <div class="dropdown-menu border-0 w-100 p-3 rounded-0 my-0" aria-labelledby="mobile-search">
     <form class="form" method="GET" action="">
         <div class="input-group w-100">
@@ -21,7 +31,9 @@
     </form>
 </div>
 </li>
-  <!--button to open my account dropdown menu  -->
+
+
+  <!--Three list items the second one a button to open my account dropdown menu  -->
 <li class="list-inline-item dropdown">
     <a class="text-black nav-link d-block d-lg-none" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <div class="text-center">
@@ -42,7 +54,7 @@
         {% endif %}
     </div>
 </li>
-  <!--button to access shopping bag -->
+  <!--Three list items the third one a button to access shopping bag -->
 <li class="list-inline-item">
     <a class="{% if grand_total %}text-primary font-weight-bold{% else %}text-black{% endif %} nav-link d-block d-lg-none" href="">
         <div class="text-center">

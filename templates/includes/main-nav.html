@@ -1,6 +1,22 @@
-<div class="collapse navbar-collapse" id="main-nav">
+<div class="collapse navbar-collapse" id="main-nav"> <!--We'll start again with the boilerplate from bootstrap.
+    Which is a div with the classes, collapsed and navbar-collapse.
+    And I'lll give it an id of main-nav which will match it up with the toggle button we
+    put into the base template. -->
     <ul class="navbar-nav w-auto mx-auto">
+        <!--Inside the div goes a standard unordered list using the required class from bootstrap.
+        As well as a couple to make it auto width (w-auto) and auto left and right margins (mx-auto).
+        Again the shell of all this code comes from the bootstrap documentation
+        so all we're doing is using that as the base and customizing it.-->
 
+
+        <!--Below Next, I'm going to paste in the first list item which will be the all products menu.
+        As you can see this is pretty standard it's just a link that says all products.
+        Which triggers a drop-down of four other links which we'll fill in the href's for in a little while.
+        And this menu will allow the user to either see all products at once.
+        Or sort them by price rating or category.
+        The rest of the nav menu items are almost identical so you can pause the video on each one of these.
+        Or simply copy and paste the first link three other times.
+        and change the appropriate attributes and text.-->
         <li class="nav-item dropdown">
             <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="all-products-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 All Products
@@ -12,6 +28,9 @@
                 <a href="" class="dropdown-item">All Products</a>
             </div>
         </li>
+
+
+        <!-- There's a menu for clothing.-->
 
         <li class="nav-item dropdown">
             <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="clothing-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -25,6 +44,7 @@
             </div>
        </li>
 
+        <!-- There's a menu for homeware.-->
        <li class="nav-item dropdown">
             <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="homeware-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Homeware
@@ -35,6 +55,8 @@
                 <a href="" class="dropdown-item">All Homeware</a>
             </div>
         </li>
+
+         <!-- There's a menu for special offers.-->
 
         <li class="nav-item dropdown">
             <a class="logo-font font-weight-bold nav-link text-black" href="#" id="specials-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

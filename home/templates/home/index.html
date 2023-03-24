@@ -1,8 +1,8 @@
-{% extends "base.html" %}
-{% load static %}
+{% extends "base.html" %} <!--extending our header and footer info from the base html  -->
+{% load static %} <!--  load static so that images will display  -->
 
-{% block page_header %}    
-    <div class="container header-container">
+{% block page_header %}   <!-- page header block from base template --> 
+    <div class="container header-container"> <!--header container with a single row and empty col -->
         <div class="row">
             <div class="col"></div>
         </div>
@@ -10,16 +10,18 @@
 {% endblock %}
 
 {% block content %}
-    <div class="container h-100">
-        <div class="row h-100">
-            <div class="col-7 col-md-6 my-auto">
-                <h1 class="display-4 logo-font text-black">
+    <div class="container h-100"> <!--Add a basic bootstrap grid with A div with a class of container - want entire col to be vertically centered so give it h-100 which has a height of 100   -->
+        <div class="row h-100"><!-- a row inside the container - vertically centered has a height of 100  -->
+            <div class="col-7 col-md-6 my-auto"><!-- and a col inside the row - we want the col to sit on the left of the screen use 7 cols by default and six cols on medium and larger screens   my auto class to vertically centr it -->
+                <h1 class="display-4 logo-font text-black"> <!-- font black-->
                     The new collections are here 
                 </h1>
                  <div class="my-5">
+                    <!--my-5 is a class name that applies margin (m) to the top and bottom (y stands for "vertical axis") of the div element. Specifically, my-5 applies a margin of 3 units (out of 5) to the top and bottom of the element. The value of the my-5 class may vary depending on the specific CSS framework or custom CSS rules defined for the HTML document.-->
                      <h4>
-                        <a href="" class="shop-now-button btn btn-lg rounded-0 text-uppercase py-3">Shop Now</a>
-                     </h4>
+                        <a href="" class="shop-now-button btn btn-lg rounded-0 text-uppercase py-3">Shop Now</a><!--anchor element with several classes shop-now- button which will define in css and the rest from bootstrap -->
+                        <!-- large button with rounded edges text uppercase and a padding of 3--> 
+                    </h4>
                 </div>
             </div>
         </div>

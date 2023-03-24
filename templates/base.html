@@ -1,31 +1,32 @@
-{% load static %}
+{% load static %} <!-- this is put in so that we can load our static files later if we didnt have it the images would not load   
+This simple base templagte will act as the framework for our entire base project.-->
 
 <!doctype html>
 <html lang="en">
     <head>
-
+        <!-- We will organise our code into blocks so when we extend this template later on we can replace chunks of it as needed so thats why we have meta blocks, css and js -->
         {% block meta %}
-            <metta http-equiv="X-UA-Compatible" content="ie=edge">
+            <metta http-equiv="X-UA-Compatible" content="ie=edge"> <!-- this allows support of older internet explorer erros and elimate validation erros when validating our HTMl-->
             <meta charset="utf-8">
             <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         {% endblock %}
 
-        {% block extra_meta %}
+        {% block extra_meta %} <!-- if we want to add any extra meta or css or js below we can add it in these sections so that we dont interfere with the core elements in the main blocks l  -->
         {% endblock %}
 
         {% block corecss %}
             <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
             <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
             <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
-            <link href="https://fonts.googleapis.com/css2?family=Lato:ital@1&display=swap" rel="stylesheet">
-            <link rel="stylesheet" href="{% static 'css/base.css' %}">
+            <link href="https://fonts.googleapis.com/css2?family=Lato:ital@1&display=swap" rel="stylesheet"> <!--from google fonts-->
+            <link rel="stylesheet" href="{% static 'css/base.css' %}"> <!--links to css file-->
         {% endblock %}
 
         {% block extra_css %}
         {% endblock %}
 
         {% block corejs %}
-            <script src="https://kit.fontawesome.com/4ac481fc67.js" crossorigin="anonymous"></script>
+            <script src="https://kit.fontawesome.com/4ac481fc67.js" crossorigin="anonymous"></script> <!--font awesome code added from their site -->
             <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
         {% endblock %}
@@ -33,22 +34,31 @@
         {% block extra_js %}
         {% endblock %}
 
-        <title>Boutique Ado {% block extra_title %}{% endblock %}</title>
+        <title>Boutique Ado {% block extra_title %}{% endblock %}</title> <!--Added block extra title here just if we wanted to add extra to heading like boutique ado - products or boutique ado -bag  on different pages of the site we can put in this block-->
     </head>
   <body>
-    <header class="container-fluid fixed-top">
-        <div id="topnav" class="row bg-white pt-lg-2 d-none d-lg-flex">
-            <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
+    <header class="container-fluid fixed-top"><!-- this is the page header which has a container fluid to extend widht of screen and a fixed top that it will be fixed to the top of page -->
+        <div id="topnav" class="row bg-white pt-lg-2 d-none d-lg-flex"><!-- this is a single row with 3 columns inside see below -->
+            <!--I'm also going to quickly add a couple more classes and an id to the main header div in base.html
+            To make its background white. Add some padding.
+            And make sure that it's only displayed on large screens
+            since this section will look different on mobile.--->
+            <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">   <!-- we want them to stack vertically on everything except large and extra large screen so will use the coll 12 and col lg for classes on each. col 12-->
+                  <!-- We also want them all vertically centred with a bit of top and bottom padding on smaller screens.
+                So I'll add the my-auto py-1 and py-lg-0 classes on each.-->  
+                <!--Lastly, the logo should be centred by default.
+                But left-aligned on large and extra-large screens.-->
                 <a href="{% url 'home' %}" class="nav-link main-logo-link">
-                    <h2 class="logo-font text-black my-0"><strong>Boutique</strong>Ado</h2>
+                    <h2 class="logo-font text-black my-0"><strong>Boutique</strong>Ado</h2> <!--First, we want to link to the home page which will use several classes which we'll define later in our CSS.
+                        And we'll link to the home url we named in urls.py-->
                 </a>
             </div>
-            <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
-                <form method="GET" action="">
-                    <div class="input-group w-100">
+            <div class="col-12 col-lg-4 my-auto py-1 py-lg-0"> 
+                <form method="GET" action=""> <!--The next column will contain our search form.-->
+                    <div class="input-group w-100"> <!-- 100% width input group with the name of text input below and q for query and this is what will be submitted to the action url   -->
                         <input class="form-control border border-black rounded-0" type="text" name="q" placeholder="Search our Site">
                         <div class="input-group-append">
-                            <button class="form-control btn btn-black border border-black rounded-0" type="submit">
+                            <button class="form-control btn btn-black border border-black rounded-0" type="submit"> <!--got a button attached to the text input class just line above from bootstrap which contains a serach item below from font awesome  -->
                                 <span class="icon">
                                     <i class="fas fa-search"></i>
                                 </span>
@@ -58,16 +68,23 @@
                 </form>
             </div>
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
-                <ul class="list-inline list-unstyled text-center text-lg-right my-0">
-                    <li class="list-inline-item dropdown">
+                <ul class="list-inline list-unstyled text-center text-lg-right my-0"> <!-- an unorded list with two list elements list inline dlist unstyle are used to align the list horziotly with no bullets  -->
+                    <li class="list-inline-item dropdown"> <!--The first list item will be a dropdown -->
                     <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <div class="text-center">
-                            <div><i class="fas fa-user fa-lg"></i></div>
+                            <div><i class="fas fa-user fa-lg"></i></div> <!-- The anchor element here will be the parent mennu  -->
+                            <!-- containing the font awesome user icon and the text my account in a paragraph.
+                            It uses the data toggle attribute to link up to the bootstrap JavaScript
+                            And open the drop-down menu when clicked.
+                            The drop-down menu that opens uses several Django template tags
+                            to determine what to display in the menu see below .-->
                             <p class="my-0">My Account</p>
                         </div>
                     </a>
                     <div class="dropdown-menu border-0" aria-labelledby="user-options">
                         {% if request.user.is_authenticated %}
+                        <!--If the user is authenticated we want to display a drop-down item for their profile and a link to logout.
+                        Otherwise, we want to display the options to log in or register if they don't have an account.-->
                             {% if request.user.is_superuser %}    
                                 <a href="" class="dropdown-item">Product Management</a>
                             {% endif %}    
@@ -76,19 +93,30 @@
                         {% else %}
                             <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
                             <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+                            <!--These account log out, account sign up, and account login URLs
+                            are coming from the allauth URLs we included in the project level urls.py-->
+                            <!--Finally if the user is authenticated and a superuser.
+                            We want to provide them with the link to manage the store by adding, updating, or deleting products.-->
                         {% endif %}    
                     </div>
                 </li>
-                <li class="list-inline-item">
-                    <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" href="">
+                <li class="list-inline-item"> <!--Shopping Bag Link-->
+                    <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" href=""> <!--  We're using the same template variable to determine which classes to apply to the element
+                        So if there's something in the bag the font will be bold and a different colour.-->
                         <div class="text-center">
                             <div><i class="fas fa-shopping-bag fa-lg"></i></div>
                             <p class="my-0">
-                                {% if grand_total %}    
+                                {% if grand_total %}    <!--jango template logic - if-->
                                     ${{ grand_total|floatformat:2 }}  
                                 {% else %}    
                                     $0.00
                                 {% endif %}
+
+                                <!--You'll notice we're checking whether this grand total template variable exists.
+                                And if it does then we want to display the total formatted to two decimal places.
+                                If not we'll just display 0.
+                                We're using the same template variable to determine which classes to apply to the element
+                                So if there's something in the bag the font will be bold and a different colour.-->
                             </p>
                         </div>
                     </a>
@@ -96,15 +124,37 @@
                 </ul>
             </div>
         </div>
-        <div class="row bg-white">
+
+        <!-- re below - Now we're gonna set up the main site navigation
+        which will act as the foundation for giving our users the ability to sort.
+        By price rating and category, identify different categories of products and easily find special offers and deals.-->
+        <div class="row bg-white"> <!--Let's begin by creating another white row underneath the top nav in the header portion
+            of base.html-->
             <nav class="navbar navbar-expand-lg navbar-light w-100">
+                <!-- Re above - We're going to use bootstraps collapsible navigation menu as our boilerplate
+                so the code I'm about to paste in. Comes directly from the bootstrap navbar documentation.
+                The only thing I've done is changed a couple attributes and added a 100% width class.
+                That'll give us a nice toggle button for the main navigation and we'll customize
+                it to include the search bar and other links as well.-->
                 <button class="navbr-toggler" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>   
                 </button>
                 {% include 'includes/mobile-top-header.html' %}
                 {% include 'includes/main-nav.html' %}
+                <!-- Re above - With that finished and both files saved the only thing left to do is include them in the base template.
+                So I'm going to head back over to base.html
+                And inside the nav element just under the button, I'll first include the mobile version of the top header
+                And then the main nav menu.
+                You can also probably see at this point why we used these includes
+                by doing it this way we keep the base template nice and clean
+                and we also have those individual HTML files isolated in case we want to
+                make changes to that specific part of the site.-->
             </nav>
         </div>
+
+        <!-- ast thing I'm going to do is create one more row for the delivery banner
+        And this is going to use a template variable called free_shipping_threshold
+        Which will create when we set up the products app in a bit.-->
         <div id="delivery-banner" class="row text-center">
             <div class="col bg-black text-white">
                 <h4 class="logo-font my-1">Free delivery on orders over ${{ free_shipping_threshold }}!</h4>
@@ -113,16 +163,16 @@
     </header>
 
     {% if messages %}
-        <div class="message-container"></div>
+        <div class="message-container"></div> <!-- this is a place to display any messages that we send back from django so its a div with a message container and will wrap in if messages template tag  -->
     {% endif %}
 
-    {% block page_header %}
+    {% block page_header %}<!--Additional page header that extends this base template in case we want to put something at the top of those pages but underneath the main headed   -->
     {% endblock %}
 
-    {% block content %}   
+    {% block content %}   <!-- This will be our block main page content  -->
     {% endblock %}
 
-    {% block postloadjs %}
+    {% block postloadjs %}<!--for js that we want to load at the end of the body   -->
     {% endblock %}
 
   </body>

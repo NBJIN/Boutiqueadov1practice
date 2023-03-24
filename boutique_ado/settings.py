@@ -46,7 +46,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'boutique_ado',
-    'home',
+    'home', # app for home app we created 
 ]
 
 MIDDLEWARE = [
@@ -65,8 +65,8 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            os.path.join(BASE_DIR, 'templates'),
-            os.path.join(BASE_DIR, 'templates', 'allauth'),
+            os.path.join(BASE_DIR, 'templates'), # add the roots template directory 
+            os.path.join(BASE_DIR, 'templates', 'allauth'), #add custom allauth directory to the templates dir setting 
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -151,10 +151,15 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
+STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),) # Staticfiles_dirs tells django where all our static files are located in the project level static folder 
 
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+#Re the above - it's worth noting that although normally we would also want to supply a static route
+# setting here for Django's collectstatic utility to work.
+# I'm not going to do that because it will interfere with setting up Amazon Web Services later on.
+# this STATICFILES_DIRS is supposed to be a tuple so place a smooth bracket before os.pat and at the end of the string of code like above in line 154
+
+MEDIA_URL = '/media/' # add a media root 
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media') # this is where all uploaded media files will go 
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
