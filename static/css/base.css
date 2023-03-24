@@ -97,7 +97,7 @@ on all site buttons. Giving our users a consistent user experience. */
 
 
 .bg-black {
-    backgrouond: #000 !important;
+    background: #000 !important;
 }
 
 /* Finally we need to add one more class to our base.css to make the background of
